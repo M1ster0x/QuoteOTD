@@ -32,3 +32,4 @@ chmod 0755 QuoteOfTheDay.py quoteotd.service
 sudo mv QuoteOfTheDay.py /usr/bin/quoteotd
 sudo mv quoteotd.service /etc/systemd/system/
 ```
+Once you've done that you can start/stop the daemon or even enable it if you want it to launch at boot.
