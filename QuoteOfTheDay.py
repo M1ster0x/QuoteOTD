@@ -7,17 +7,17 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(("0.0.0.0", 17))
 server.listen(5)
 
-print("Serveur à l'écoute sur le port 17")
+print("Server listening on port 17")
 #On écoute sans cesse
 while True:
     sock, addr = server.accept()
-    print("Connexion ouverte par {} du port {}".format(sock.getpeername()[0],sock.getpeername()[1]))
+    print("Connection opened from {}:{}".format(sock.getpeername()[0],sock.getpeername()[1]))
     #On va chercher la quote à renvoyer par l'api
     r = requests.get("https://api.chucknorris.io/jokes/random")
     quote=r.json()["value"] + "\n"
     #On envoie la quote
     sock.send(bytes(quote, "UTF-8"))
-    print("Réponse envoyée")
+    print("Answer sent")
     sock.close()
-    print("Connexion fermée")
+    print("Connection closed")
 
