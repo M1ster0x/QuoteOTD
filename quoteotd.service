@@ -1,0 +1,9 @@
+[Unit]
+Description=Lance un serveur quote sur le port 17
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/bin/quoteotd
+
+[Install]
+WantedBy=multi-user.target
