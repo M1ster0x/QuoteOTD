@@ -33,3 +33,15 @@ sudo mv QuoteOfTheDay.py /usr/bin/quoteotd
 sudo mv quoteotd.service /etc/systemd/system/
 ```
 Once you've done that you can start/stop the daemon or even enable it if you want it to launch at boot.
+
+## How to use
+
+If you have launched the script/daemon then you must initiate a TCP connection to play with it.
+
+``` 
+curl -s localhost:17
+```
+or
+```
+nc localhost 17
+```
